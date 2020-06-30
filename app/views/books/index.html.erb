@@ -1,0 +1,14 @@
+<% if !user_signed_in? %>
+<div class="jumbotron">
+  <h1>Your favorite Books</h1>
+  <p><%= link_to "Sing up to submit book", new_user_registration_path, class: "btn btn-primary btn-lg" %></p>
+</div>
+<% end %>
+
+
+<% @books.each do |book| %>
+<h2><%= book.title %></h2>
+<h2><%= book.year %></h2>
+<br>
+<%= link_to "Read Book", book %>
+<% end %>
